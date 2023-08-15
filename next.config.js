@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+    reactStrictMode: false,
+    swcMinify: true,
+}
 
 module.exports = nextConfig
+
+
+module.exports = {
+    images: {
+        domains: ['cdn.sanity.io']
+    }
+};
