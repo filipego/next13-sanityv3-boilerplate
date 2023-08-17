@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Roboto:wght@400;500&display=swap');
+
+@font-face {
+    font-family: 'Right Grotesk Compact';
+    src: url('/fonts/RightGrotesk-CompactBlack.woff2') format('woff2'),
+        url('/fonts/RightGrotesk-CompactBlack.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+
+
+// COLOR VARIABLES
+$color-primary: #090909;
+$color-secondary: #FAF2F2;
+$color-tertiary: #FAF2F2;
+$color-dark: #111111;
+$color-light-gray: #E7DFDF;
+$color-black: black;
+$color-white: white;
+$color-offwhite: #FBFCF3;
+$color-links: #C470C3;
+
+
+
+// Typography
+
+$font-primary: 'Right Grotesk Compact', sans-serif;
+$font-secondary: 'Roboto', sans-serif;
+$font-copy: 'Arvo', serif;
+
+
+// RESPONSIVE BREAKPOINTS
+
+$bp-largest: 120rem; // 1200px
+$bp-large: 100rem; // 1000px
+$bp-medium: 80rem; // 800px;
+$bp-small: 60rem; // 600px;
+$bp-smallest: 42rem; // 600px;
