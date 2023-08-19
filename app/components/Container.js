@@ -1,9 +1,7 @@
-function Container({ children, wrapperClasses, classes }) {
+function Container({ children, classes, smaller, noPadding }) {
     return (
-        <div className={`wrapper ${wrapperClasses ? `${wrapperClasses}` : ''}`}>
-            <div className={`container ${classes ? `${classes}` : ''}`}>
-                {children}
-            </div>
+        <div className={`container ${classes ? `${classes}` : ''} ${smaller ? 'container--smaller' : ''} ${noPadding ? 'p-tb-0' : ''}`}>
+            {children}
         </div>
     )
 }

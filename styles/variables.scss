@@ -1,36 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 @font-face {
-    font-family: 'Right Grotesk Compact';
-    src: url('/fonts/RightGrotesk-CompactBlack.woff2') format('woff2'),
-        url('/fonts/RightGrotesk-CompactBlack.woff') format('woff');
-    font-weight: 900;
+    font-family: 'gallery_modernregular';
+    src: url('/fonts/gallerymodern-webfont.woff2') format('woff2'),
+        url('/fonts/gallerymodern-webfont.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
-    font-display: swap;
+
+}
+
+@font-face {
+    font-family: 'everettlight';
+    src: url('/fonts/everett-light-webfont.woff2') format('woff2'),
+        url('/fonts/everett-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'everettmedium';
+    src: url('/fonts/everett-medium-webfont.woff2') format('woff2'),
+        url('/fonts/everett-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'everettregular';
+    src: url('/fonts/everett-regular-webfont.woff2') format('woff2'),
+        url('/fonts/everett-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 
 
-
-
 // COLOR VARIABLES
-$color-primary: #090909;
-$color-secondary: #FAF2F2;
-$color-tertiary: #FAF2F2;
-$color-dark: #111111;
-$color-light-gray: #E7DFDF;
-$color-black: black;
-$color-white: white;
-$color-offwhite: #FBFCF3;
-$color-links: #C470C3;
+$color-primary: #C8AC75;
+$color-dark: #141414;
+$color-lighter-dark: #1e1e1e;
+$color-light-gray: #4e575a;
+$color-light: #f0f0f0;
+$color-links: #1B79FF;
 
 
 
 // Typography
 
-$font-primary: 'Right Grotesk Compact', sans-serif;
-$font-secondary: 'Roboto', sans-serif;
-$font-copy: 'Arvo', serif;
+$font-primary: 'everettregular';
+$font-primary-medium: 'everettmedium';
+$font-primary-light: 'everettlight';
+$font-secondary: 'gallery_modernregular';
+$logo: 'Pacifico', cursive;
 
 
 // RESPONSIVE BREAKPOINTS
@@ -39,4 +63,3 @@ $bp-largest: 120rem; // 1200px
 $bp-large: 100rem; // 1000px
 $bp-medium: 80rem; // 800px;
 $bp-small: 60rem; // 600px;
-$bp-smallest: 42rem; // 600px;

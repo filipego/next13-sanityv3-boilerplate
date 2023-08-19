@@ -1,0 +1,31 @@
+.skills{
+
+    .full-bleed{
+        padding-bottom: 0;
+        
+    }
+
+
+    &__content{
+        padding-top: 0;
+    }
+    
+    .marquee{
+        &:first-child{
+            border-bottom: none;
+        }
+        &--dark{
+        
+            &:first-child{
+                border-bottom: none;
+            }
+        }
+        span{
+            padding: 0 3rem;
+            display: inline-block;
+            color: $color-lighter-dark;
+        }
+    }
+
+    
+}

@@ -1,0 +1,175 @@
+.contact {
+    background-color: $color-dark;
+
+    .section {
+        padding-top: 20rem;
+
+        @media only screen and (max-width: $bp-small) {
+            padding-top: 15rem;
+        }
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+
+        @media only screen and (max-width: $bp-small) {
+            grid-template-columns: 1fr;
+            gap: 0;
+
+        }
+    }
+
+    .heading-3 {
+        color: $color-light;
+        margin-bottom: 20rem;
+
+        @media only screen and (max-width: $bp-small) {
+            margin-bottom: 10rem;
+        }
+
+        span {
+            display: block;
+        }
+    }
+
+    .heading-2 {
+        margin-bottom: 2.5rem;
+    }
+
+    p {
+        color: $color-light;
+        font-size: 1.4rem;
+        line-height: 1.6;
+    }
+
+    &__form {
+        .heading-2 {
+            margin-bottom: 3.5rem;
+
+            @media only screen and (max-width: $bp-small) {
+                margin-left: 2rem;
+            }
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            border-bottom: 1px solid $color-lighter-dark;
+        }
+
+        form {
+            width: 70%;
+
+            @media only screen and (max-width: $bp-small) {
+                width: 100%;
+                margin-bottom: 10rem;
+            }
+
+            div {
+                border-top: 1px solid $color-lighter-dark;
+                padding: 1rem 2rem;
+
+
+            }
+
+        }
+
+        label,
+        input {
+            display: block;
+            background-color: $color-dark;
+        }
+
+        input[type="text"],
+        input[type="email"]:-webkit-autofill,
+        input[type="text"],
+        input[type="email"]:-webkit-autofill:hover,
+        input[type="text"],
+        input[type="email"]:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus {
+            border: none;
+            -webkit-text-fill-color: $color-light-gray;
+            -webkit-box-shadow: 0 0 0px 1000px $color-dark inset;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+        label {
+            margin-top: 3rem;
+            font-size: 2rem;
+            text-transform: uppercase;
+            color: $color-light;
+
+            @media only screen and (max-width: $bp-small) {
+                font-size: 1.5rem;
+            }
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        ::placeholder {
+            font-size: 1.6rem;
+            padding: 2rem 2rem 2rem 0;
+            min-width: 80%;
+        }
+
+        ::placeholder {
+            padding: 2rem 2rem 2rem 0;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 20rem;
+            border-bottom: 1px solid $color-lighter-dark;
+            margin-bottom: 7rem;
+
+            @media only screen and (max-width: $bp-small) {
+                margin-bottom: 3rem;
+            }
+
+            &::placeholder {
+                padding: 0;
+            }
+        }
+
+        .btn {
+            margin-left: 2rem;
+
+            &:hover {
+                color: $color-light;
+            }
+
+            input {
+                background: none;
+            }
+        }
+    }
+
+    &__info-content {
+        @media only screen and (max-width: $bp-small) {
+            order: -1;
+            padding: 0 2rem;
+        }
+    }
+
+    &__info {
+        margin-bottom: 10rem;
+
+        @media only screen and (max-width: $bp-small) {
+            margin-bottom: 8rem;
+        }
+
+    }
+
+    &__local-time {
+
+        @media only screen and (max-width: $bp-small) {
+            margin-bottom: 10rem;
+        }
+
+    }
+}

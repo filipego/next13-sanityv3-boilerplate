@@ -50,9 +50,9 @@ export const myTheme = buildLegacyTheme({
 
 export default defineConfig({
   name: 'default',
-  title: 'next13-sanity-boilerplate',
+  title: 'backend-v4',
 
-  projectId: '6587pnwl',
+  projectId: 'c4ya50v1',
   dataset: 'production',
 
   plugins: [deskTool(), visionTool()],

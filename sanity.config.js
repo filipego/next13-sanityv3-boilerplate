@@ -3,7 +3,7 @@ import { deskTool } from 'sanity/desk'
 import { schemaTypes } from './sanity/schemas'
 
 const config = defineConfig({
-    projectId: "6587pnwl",
+    projectId: "c4ya50v1",
     dataset: "production",
     title: "Next 13 Sanity v3 boilerplate",
     apiVersion: "2021-10-21",

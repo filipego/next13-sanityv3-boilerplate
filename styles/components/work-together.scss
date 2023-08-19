@@ -1,0 +1,13 @@
+.work-together {
+    background-color: $color-dark;
+
+    a {
+        color: $color-links;
+    }
+
+    span {
+        padding: 0 3rem;
+        display: inline-block;
+        color: $color-lighter-dark;
+    }
+}

@@ -1,0 +1,89 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  .container {
+    z-index: 999;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: $bp-small) {
+      padding-top: 5vh;
+      min-height: 80vh;
+    }
+
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    &__content {
+      padding: 0 1rem;
+    }
+  }
+
+
+  &::before {
+    position: absolute;
+    overflow: hidden;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    content: "";
+    /* you can control opacity of noise  */
+    opacity: .06;
+    pointer-events: none;
+    background: url(https://ik.imagekit.io/ec3987k0v/Filipe_Valente_Site_V3/noise_Yi_kENDSV.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1659837913016);
+  }
+
+  p {
+    max-width: 50rem;
+    margin-bottom: 5rem;
+    visibility: hidden;
+  }
+
+  .each-line {
+    visibility: hidden;
+  }
+
+  .cta .btn {
+    visibility: hidden;
+    display: inline-block;
+
+  }
+
+  .text-circle {
+    position: absolute;
+    bottom: -4rem;
+    right: -4rem;
+    background-image: url(https://ik.imagekit.io/ec3987k0v/Filipe_Valente_Site_V3/filipe-valente-profile_P98bpR-8u.png?ik-sdk-version=javascript-1.4.3&updatedAt=1660018925064);
+    background-repeat: no-repeat;
+    background-position: center center;
+    visibility: hidden;
+    overflow: hidden;
+
+    @media only screen and (max-width: $bp-small) {
+      display: none;
+    }
+
+    svg {
+      width: 100%;
+      overflow: hidden;
+
+    }
+
+    svg textPath {
+      font-size: 2.8rem;
+      letter-spacing: 20px;
+      fill: $color-light-gray;
+
+    }
+  }
+
+
+}

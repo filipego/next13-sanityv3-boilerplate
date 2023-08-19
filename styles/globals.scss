@@ -4,9 +4,6 @@
 
 
 
-
-
-
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -14,76 +11,42 @@ html {
   line-height: 1.1;
 }
 
+
+
 body {
   font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
-  background-color: $color-secondary;
-  color: $color-primary;
-  font-family: $font-copy;
+  background-color: $color-light;
+  color: $color-light-gray;
+  font-family: $font-primary;
   line-height: 1.4;
   letter-spacing: 0.03rem;
 }
-
-img {
-  width: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-iframe {
-  border-width: 0px;
-}
-
-
-// Wrapper
-
-.wrapper {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-
-}
-
-// Container
 
 .container {
   display: grid;
   width: 100%;
   max-width: 120rem;
   margin: 0 auto;
-  padding: 12rem 8rem 14rem 8rem;
-
+  padding: 12rem 2rem;
 
   @media only screen and (max-width: $bp-small) {
     padding: 5rem 2rem;
   }
 
-  &.noTopPadding {
-    padding-top: 0;
+  &--smaller {
+    max-width: 80rem;
   }
 
-  &.halfTopPadding {
-    padding-top: 6rem;
+  &--inner {
+    padding: 0 5rem;
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 0 1rem;
+    }
   }
-
-  &__noGrid {
-    display: block;
-  }
-
-
-}
-
-
-
-
-
-// Grid
-
-.grid-col-1 {
-  display: grid;
-  grid-template-columns: 1fr;
 }
 
 .grid-col-2 {
@@ -95,19 +58,12 @@ iframe {
     grid-template-columns: 1fr;
     gap: 0;
   }
-
 }
 
 .grid-col-3 {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-
-  gap: 6rem;
-
-  @media only screen and (max-width: $bp-medium) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 3rem;
-  }
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10rem;
 
   @media only screen and (max-width: $bp-small) {
     grid-template-columns: 1fr;
@@ -115,111 +71,339 @@ iframe {
   }
 }
 
-
-
 .flex-space-between {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.flex-row {
-  display: flex;
-  flex-direction: row;
-}
-
-
-// Button and link
-
-
-/* unvisited link */
-a:link {
-  font-family: $font-primary;
-  color: $color-links;
-  font-size: 1.3rem;
-}
-
-/* visited link */
-a:visited {
-  color: $color-links;
-}
-
-/* mouse over link */
-a:hover {}
-
-
 .btn {
   background-color: $color-links;
+  border: 1px solid $color-links;
   border-radius: 3.3rem;
-  padding: 1rem 3rem;
-  color: $color-white;
+  padding: 1.5rem 3rem;
+  color: $color-light;
+  margin-right: 1.5rem;
   font-size: 1.4rem;
-  display: block;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  z-index: 2;
   line-height: 1.8rem;
-  width: fit-content;
   cursor: pointer;
 
-  &:hover {
-    background-color: $color-primary;
+  @media only screen and (max-width: $bp-small) {
+    padding: 1.4rem 2.4rem;
+    margin-right: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.3;
   }
 
+  .hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-light;
+    color: $color-links;
+    z-index: -1;
+    transform: translateY(100%);
+    transition: transform .6s cubic-bezier(0.19, 1, 0.22, 1);
+  }
 
+  &:hover span {
+    color: $color-links;
+  }
 
+  &:hover .hover {
+    transform: translateY(0);
+  }
+
+  &--ghost {
+    background-color: transparent;
+    color: $color-links;
+
+    .hover {
+      background-color: $color-links;
+      color: $color-light;
+    }
+
+    &:hover span {
+      color: $color-light;
+      background-color: $color-links;
+    }
+  }
 }
 
 
+// Padding 0
+
+.p-tb-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+// Padding 2rem
+
+.p-tb-2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.pt-2 {
+  padding-top: 2rem;
+}
+
+.pb-2 {
+  padding-bottom: 2rem;
+}
+
+// Padding top and bottom
+
+.p-tb-5 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  @media only screen and (max-width: $bp-small) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+  }
+}
+
+.p-tb-10 {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+
+  @media only screen and (max-width: $bp-small) {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+  }
+}
+
+.p-tb-12 {
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+
+  @media only screen and (max-width: $bp-small) {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+  }
+}
+
+// Padding top
+
+.pt-5 {
+  padding-top: 5rem;
+
+  @media only screen and (max-width: $bp-small) {
+    padding-top: 2rem;
+
+  }
+}
+
+.pt-10 {
+  padding-top: 10rem;
+
+  @media only screen and (max-width: $bp-small) {
+    padding-top: 5rem;
+
+  }
+}
+
+.pt-12 {
+  padding-top: 12rem;
+
+  @media only screen and (max-width: $bp-small) {
+    padding-top: 6rem;
+
+  }
+}
+
+.pt-20 {
+  padding-top: 20rem;
+
+  @media only screen and (max-width: $bp-small) {
+    padding-top: 10rem;
+
+  }
+}
+
+// Padding bottom
+
+.pb-5 {
+  padding-bottom: 5rem;
+
+  @media only screen and (max-width: $bp-small) {
+    padding-bottom: 2rem;
+
+  }
+}
+
+.pb-10 {
+  padding-bottom: 10rem;
+
+  @media only screen and (max-width: $bp-small) {
+    padding-bottom: 5rem;
+
+  }
+}
+
+.pb-12 {
+  padding-bottom: 12rem;
+
+  @media only screen and (max-width: $bp-small) {
+    padding-bottom: 6rem;
+
+  }
+}
 
 
-// Youtube Video
+.pb-20 {
+  padding-bottom: 20rem;
 
-iframe {
-  object-fit: contain;
+  @media only screen and (max-width: $bp-small) {
+    padding-bottom: 10rem;
+
+  }
+}
+
+.line-break {
+  display: block;
+}
+
+.each-line {
+  display: block;
+}
+
+
+.dark {
+  // display: none;
+  background-color: $color-dark;
+
+  &.full-bleed {
+    box-shadow: 0 0 0 100vmax $color-dark;
+  }
+}
+
+.pill {
+  border: 1px solid $color-light-gray;
+  width: fit-content;
+  margin-bottom: .8rem;
+  font-size: 1.2rem;
+  padding: .6rem 1rem .55rem 1rem;
+  border-radius: 3rem;
+}
+
+// HomePage
+
+.homepage {
   width: 100%;
-  aspect-ratio: 16 / 9;
-}
-
-// Text alignment
-
-.text-centred {
-  text-align: center;
-}
-
-.align-left {
-  text-align: left;
-  display: inline-block;
-}
-
-.align-center {
-  text-align: center;
-  display: block;
-}
-
-.align-right {
-  text-align: right;
-  display: block;
-}
-
-// Bigger Text
-
-.bigger-text {
-  font-size: 140%;
 }
 
 
+.portfolio {
+  overflow: hidden;
+
+  &__content-wrapper {
+    position: relative;
+  }
+
+  &__img-wrapper {
+    position: fixed;
+    width: 38rem;
+    height: 24rem;
+    left: -19rem;
+    top: -12rem;
+    z-index: 10;
+    visibility: hidden;
+    overflow: hidden;
+    transform-origin: center;
+    transform: scale(.3);
+    will-change: transform;
+  }
+
+  &__img-placeholder {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    will-change: transform;
+  }
+}
+
+.page-not-found {
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    content: "";
+    /* you can control opacity of noise  */
+    opacity: .045;
+    pointer-events: none;
+    background: url(https://ik.imagekit.io/ec3987k0v/Filipe_Valente_Site_V3/noise_Yi_kENDSV.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1659837913016);
+  }
+
+  .each-line {
+    position: relative;
+  }
+
+  .four-zero-four {
+    border-radius: 300rem;
+    border: 3px solid $color-primary;
+    font-size: 9.5rem;
+    line-height: 1;
+    text-align: center;
+    padding: 1.5rem 5rem .3rem 4rem;
+    display: inline-block;
+    margin-bottom: 4rem;
+    margin-right: 2rem;
+  }
+
+  .not {
+    text-align: center;
+    bottom: 1.8rem;
+    position: absolute;
+  }
+}
 
 
 
 
+@import "./components/header.scss";
+@import "./components/homepage/hero.scss";
+@import "./components/homepage/portfolio-list.scss";
+@import "./components/homepage/about.scss";
+@import "./components/homepage/skills.scss";
+@import "./components/homepage/reviews-list.scss";
+
+@import "./components/marquee.scss";
+@import "./components/work-together.scss";
 
 
-
-// Pages
-@import "./pages/homepage.scss";
+@import "./components/footer.scss";
 
 
-
-// Components
-@import "./components/common/header.scss";
-@import "./components/common/hero.scss";
-@import "./components/common/footer.scss";
-@import "./components/common/section.scss";
+@import "./pages/portfolio-item.scss";
+@import "./pages/contact.scss";

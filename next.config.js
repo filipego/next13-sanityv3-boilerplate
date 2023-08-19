@@ -9,6 +9,12 @@ module.exports = nextConfig
 
 module.exports = {
     images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'ik.imagekit.io',
+            },
+        ],
         domains: ['cdn.sanity.io']
     }
 };
