@@ -85,6 +85,12 @@
     }
 
     &__more-images {
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
         ul {
             li {
                 margin-bottom: 6rem;

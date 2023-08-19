@@ -18,9 +18,20 @@ export async function getPortfolios() {
     return createClient(clientConfig).fetch(
         groq`*[_type == 'portfolio']{
             title,
-            slug,
+            "slug": slug.current,
             "image": thumbImage.asset->url,
+            color
+        }`
+    )
+}
+
+export async function getPortfolioItem(slug) {
+    return createClient(clientConfig).fetch(
+        groq`*[_type == 'portfolio' && slug.current == $slug][0]{
+            title,
             "cover": cover.asset->url,
+            "moreImages":   moreImages[].asset->url ,
+            "slug": slug.current,
             clientInfo,
             client,
             role,
@@ -29,6 +40,7 @@ export async function getPortfolios() {
             challenge,
             approach,
             color
-        }`
+        }`,
+        { slug }
     )
 }
