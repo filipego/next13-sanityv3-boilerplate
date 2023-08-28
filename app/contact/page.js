@@ -1,32 +1,15 @@
-'use client'
-
-import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
-
 import Container from '../components/Container'
+import Form from '../components/Form';
+
+export const metadata = {
+    title: 'Contact Page - Filipe Valente Creative Web Developer',
+    description: "Filipe Valente's Contact Page",
+}
 
 
 function Contact() {
-    const form = useRef();
 
     const localTime = new Date();
-
-
-    const sendEmail = (e) => {
-        e.preventDefault();
-
-        emailjs.sendForm('service_h2wft66', 'template_7pquv6n', form.current, '54HvWBDIv_jfYpjoD')
-            .then((result) => {
-                // console.log(result.text);
-
-
-            }, (error) => {
-                // console.log(error.text);
-            });
-
-        notify()
-        e.target.reset();
-    };
 
     return (
         <div>
@@ -38,56 +21,7 @@ function Contact() {
                     <div className="contact__content container--inner">
                         <div className="contact__form">
                             <h2 className="heading-2">Contact Form</h2>
-                            <form ref={form} onSubmit={sendEmail}>
-                                <div>
-                                    <label htmlFor="name">What's your name?</label>
-                                    <input
-                                        id="name"
-                                        type="text"
-                                        name="name"
-                                        placeholder="John Doe *"
-                                        required />
-                                </div>
-                                <div>
-                                    <label htmlFor="email">What's your Email?</label>
-                                    <input
-                                        id="email"
-                                        type="email"
-                                        name="email"
-                                        placeholder="jonhdoe@doe.com *"
-                                        required />
-                                </div>
-                                <div>
-                                    <label htmlFor="business">What's your Business name?</label>
-                                    <input
-                                        id="business"
-                                        type="text"
-                                        name="business"
-                                        placeholder="John & Doe" />
-                                </div>
-                                <div>
-                                    <label htmlFor="service">What's services are you looking for?</label>
-                                    <input
-                                        id="service"
-                                        type="text"
-                                        name="service"
-                                        placeholder="Web Design, Web Development ..." />
-                                </div>
-                                <div className="text-area">
-                                    <label htmlFor="message">Your Message</label>
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        placeholder="Hi Filipe, can you please help me with ... *"
-                                        required />
-                                </div>
-                                <span className="btn btn--ghost">
-                                    <span className="hover"></span>
-                                    <input type="submit" value="Send" />
-                                </span>
-
-
-                            </form>
+                            <Form />
                         </div>
                         <div className='contact__info-content'>
                             <div className="contact__info">

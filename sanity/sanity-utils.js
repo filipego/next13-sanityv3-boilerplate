@@ -37,6 +37,7 @@ export async function getPortfolioItem(slug) {
             role,
             techUsed,
             url,
+            videoUrl,
             challenge,
             approach,
             color

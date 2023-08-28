@@ -16,6 +16,7 @@ export default async function Portfolio() {
                     <ul className='portfolio__items'>
                         {portfolios.map((p, index) => (
                             <PortfolioList
+
                                 currentSlug={p.slug}
                                 title={p.title}
                                 image={p.image}

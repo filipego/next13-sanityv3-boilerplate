@@ -8,6 +8,17 @@ import Image from "next/image";
 import Container from "@/app/components/Container";
 import Button from "@/app/components/Button";
 import WorkTogether from "@/app/components/WorkTogether";
+import PortfolioVideo from "@/app/components/portfolioVideo";
+
+
+export async function generateMetadata({ params }) {
+    const slug = params.project;
+    const project = await getPortfolioItem(slug)
+
+    return {
+        title: project.title,
+    }
+}
 
 
 export default async function PotfolioItemPage({ params }) {
@@ -81,14 +92,7 @@ export default async function PotfolioItemPage({ params }) {
 
             {/* Video */}
 
-            {/* {videoUrl &&
-                <Container classes='portfolio-single__video'>
-                    {videoRef && <video ref={videoRef} width="1920" height="1080" playsInline loop muted>
-                        <source src={videoUrl} type="video/mp4" />
-                    </video>}
-                </Container>
-
-            } */}
+            <PortfolioVideo videoUrl={videoUrl} />
 
 
             {/* Challenge and Approach */}
@@ -124,6 +128,8 @@ export default async function PotfolioItemPage({ params }) {
             }
 
 
+            {/* Next and previous project */}
+
             <Container classes="portfolio-single__next">
                 <h2 className="heading-2">Next Project</h2>
                 <div className="portfolio-single__next__link">
@@ -157,6 +163,7 @@ export default async function PotfolioItemPage({ params }) {
             </Container>
 
 
+            {/* Work Together */}
 
             <WorkTogether />
 
